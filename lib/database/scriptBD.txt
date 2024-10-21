@@ -1,0 +1,25 @@
+CREATE DATABASE locacao
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+USE locacao;
+
+CREATE TABLE clientes (
+idcliente INT NOT NULL AUTO_INCREMENT, 
+cpf VARCHAR(11) UNIQUE NOT NULL,
+nome VARCHAR(30) NOT NULL,
+datanasc DATE,
+sexo ENUM('M','F'),
+PRIMARY KEY(idcliente)
+) DEFAULT CHARSET utf8;
+
+CREATE TABLE veiculos (
+idveiculo INT NOT NULL AUTO_INCREMENT, 
+placa VARCHAR(7) UNIQUE NOT NULL,
+marca VARCHAR(20) NOT NULL,
+modelo VARCHAR(35) NOT NULL,
+cor VARCHAR(15) NOT NULL,
+ano DATE,
+cpflocador VARCHAR(30),
+PRIMARY KEY(idveiculo),
+FOREIGN KEY (cpflocador) REFERENCES cliente(cpf)
+) DEFAULT CHARSET utf8;
