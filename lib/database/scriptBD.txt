@@ -18,7 +18,7 @@ placa VARCHAR(7) UNIQUE NOT NULL,
 marca VARCHAR(20) NOT NULL,
 modelo VARCHAR(35) NOT NULL,
 cor VARCHAR(15) NOT NULL,
-ano DATE,
+ano YEAR NOT NULL,
 cpflocador VARCHAR(30),
 PRIMARY KEY(idveiculo),
 FOREIGN KEY (cpflocador) REFERENCES cliente(cpf)
