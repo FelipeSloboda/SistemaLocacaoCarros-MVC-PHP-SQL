@@ -1,0 +1,36 @@
+<h5>CLIENTES</h5>
+
+<button type="button" class="btn btn-success"><a href="http://localhost/SistemaLocacaoCarros-MVC-PHP-SQL/?pagina=cliente&metodo=criar">+ NOVO CLIENTE</a></button><br><br>
+<p>> Clientes cadastrados:</p>
+
+{% if clientes == false %}
+  <p>Não existe cliente veiculo cadastrado !</p>
+{% else %}
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>CPF</th>
+        <th>NOME</th>
+        <th>DATA NASCIMENTO</th>
+        <th>SEXO</th>
+        <th>ALTERAR</th>
+        <th>APAGAR</th>
+      </tr>
+    </thead>
+  <tbody>
+      {% for c in clientes %}    
+      <tr>
+        <th>{{c.idcliente}}</th>
+        <th>{{c.cpf}}</th>
+        <th>{{c.nome}}</th>
+        <th>{{c.datanasc}}</th>
+        <th>{{c.sexo}}</th>
+        <th><button type="button" class="btn btn-primary btn-sm"><a href="http://localhost/SistemaLocacaoCarros-MVC-PHP-SQL/?pagina=cliente&metodo=alterar&id={{c.idcliente}}">ALTERAR</a></button></th>
+        <th><button type="button" class="btn btn-danger btn-sm"><a href="http://localhost/SistemaLocacaoCarros-MVC-PHP-SQL/?pagina=cliente&metodo=excluir&id={{c.idcliente}}">APAGAR</a></button></th>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+{% endif %}

@@ -1,0 +1,23 @@
+<h5>ALTERAR VEICULO</h5><br>
+
+<form action="?pagina=veiculo&metodo=atualizar" method="post">
+    <label for="placa">PLACA</label><br>
+    <input type="text" name="placa" value="{{placa}}"><br><br>
+
+    <label for="marca">MARCA</label><br>
+    <input type="text" name="marca" value="{{marca}}"><br><br>
+
+    <label for="modelo">MODELO</label><br>
+    <input type="text" name="modelo" value="{{modelo}}"><br><br>
+
+    <label for="cor">COR</label><br>
+    <input type="text" name="cor" value="{{cor}}"><br><br>
+
+    <label for="ano">ano</label><br>
+    <input type="text" name="ano" value="{{ano}}"><br><br>
+
+    <button type="submit" class="btn btn-primary">ATUALIZAR</button>
+
+    <input type="hidden" name="id" value="{{idveiculo}}">
+
+</form>

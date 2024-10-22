@@ -1,0 +1,19 @@
+<h5>ALTERAR CLIENTE</h5><br>
+
+<form action="?pagina=cliente&metodo=atualizar" method="post">
+    <label for="cpf">CPF</label><br>
+    <input type="text" name="cpf" value="{{cpf}}"><br><br>
+
+    <label for="nome">NOME</label><br>
+    <input type="text" name="nome" value="{{nome}}"><br><br>
+
+    <label for="datanasc">DATA NASCIMENTO</label><br>
+    <input type="text" name="datanasc" value="{{datanasc}}"><br><br>
+
+    <label for="sexo">SEXO</label><br>
+    <input type="text" name="sexo" value="{{sexo}}"><br><br>
+
+    <button type="submit" class="btn btn-primary">ATUALIZAR</button>
+
+    <input type="hidden" name="id" value="{{idcliente}}">
+</form>

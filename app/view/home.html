@@ -1,0 +1,32 @@
+<h5>HOME</h5>
+<br><p>> Veiculos disponiveis:</p>
+
+{% if veiculos == false %}
+  <p>Não existe nenhum veiculo disponivel no momento !</p>
+{% else %}
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>PLACA</th>
+        <th>MARCA</th>
+        <th>MODELO</th>
+        <th>COR</th>
+        <th>ANO</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for v in veiculos %}    
+      <tr>
+        <th>{{v.idveiculo}}</th>
+        <th>{{v.placa}}</th>
+        <th>{{v.marca}}</th>
+        <th>{{v.modelo}}</th>
+        <th>{{v.cor}}</th>
+        <th>{{v.ano}}</th>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endif %}

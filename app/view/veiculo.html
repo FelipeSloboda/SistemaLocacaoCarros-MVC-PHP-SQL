@@ -1,0 +1,38 @@
+<h5>VEICULOS</h5>
+
+<button type="button" class="btn btn-success"><a href="http://localhost/SistemaLocacaoCarros-MVC-PHP-SQL/?pagina=veiculo&metodo=criar">+ NOVO VEICULO</a></button><br><br>
+<p>> Veiculos cadastrados:</p>
+
+{% if veiculos == false %}
+  <p>Não existe nenhum veiculo cadastrado !</p>
+{% else %}
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>PLACA</th>
+        <th>MARCA</th>
+        <th>MODELO</th>
+        <th>COR</th>
+        <th>ANO</th>
+        <th>ALTERAR</th>
+        <th>APAGAR</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for v in veiculos %}    
+      <tr>
+        <th>{{v.idveiculo}}</th>
+        <th>{{v.placa}}</th>
+        <th>{{v.marca}}</th>
+        <th>{{v.modelo}}</th>
+        <th>{{v.cor}}</th>
+        <th>{{v.ano}}</th>
+        <th><button type="button" class="btn btn-primary btn-sm"><a href="http://localhost/SistemaLocacaoCarros-MVC-PHP-SQL/?pagina=veiculo&metodo=alterar&id={{v.idveiculo}}">ALTERAR</a></button></th>
+        <th><button type="button" class="btn btn-danger btn-sm"><a href="http://localhost/SistemaLocacaoCarros-MVC-PHP-SQL/?pagina=veiculo&metodo=excluir&id={{v.idveiculo}}">APAGAR</a></button></th>
+      </tr>
+      {% endfor %}
+  </tbody>  
+</table>
+{% endif %}
